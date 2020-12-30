@@ -1,0 +1,32 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="aws.lambda" factoryName="Local">
+    <option name="credentialProviderId" />
+    <option name="regionId" />
+    <option name="debugHost" value="localhost" />
+    <option name="environmentVariables">
+      <map />
+    </option>
+    <option name="handler" value="HelloWorld::HelloWorld.Function::FunctionHandler" />
+    <option name="image" value="false" />
+    <option name="logicalFunctionName" />
+    <option name="memorySize" value="128" />
+    <option name="pathMappings">
+      <list />
+    </option>
+    <option name="platform" />
+    <option name="runtime" value="dotnetcore3.1" />
+    <option name="templateFile" />
+    <option name="timeout" value="300" />
+    <option name="useTemplate" value="false" />
+    <option name="input" value="$PROJECT_DIR$/events/event.json" />
+    <option name="inputIsFile" value="true" />
+    <sam>
+      <option name="additionalBuildArgs" value="" />
+      <option name="additionalLocalArgs" value="" />
+      <option name="buildInContainer" value="false" />
+      <option name="dockerNetwork" value="" />
+      <option name="skipImagePull" value="false" />
+    </sam>
+    <method v="2" />
+  </configuration>
+</component>

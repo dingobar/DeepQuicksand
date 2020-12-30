@@ -16,22 +16,22 @@ namespace HelloWorld
     public class Function
     {
 
-        private static readonly HttpClient client = new HttpClient();
+        private static readonly HttpClient _Client = new HttpClient();
 
-        private static async Task<string> GetCallingIP()
+        private static async Task<string> GetCallingIp()
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("User-Agent", "AWS Lambda .Net Client");
+            _Client.DefaultRequestHeaders.Accept.Clear();
+            _Client.DefaultRequestHeaders.Add("User-Agent", "AWS Lambda .Net Client");
 
-            var msg = await client.GetStringAsync("http://checkip.amazonaws.com/").ConfigureAwait(continueOnCapturedContext:false);
+            var msg = await _Client.GetStringAsync("http://checkip.amazonaws.com/").ConfigureAwait(continueOnCapturedContext:false);
 
             return msg.Replace("\n","");
         }
 
-        public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest apigProxyEvent, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest apiGatewayProxyEvent, ILambdaContext context)
         {
 
-            var location = await GetCallingIP();
+            var location = await GetCallingIp();
             var body = new Dictionary<string, string>
             {
                 { "message", "hello world" },
